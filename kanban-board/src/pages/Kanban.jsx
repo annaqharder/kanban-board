@@ -3,34 +3,32 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const itemsFromBackend = [
-    { id: uuidv4(), content: "first task"},
-    { id: uuidv4(), content: "second task"},
-]
-
-
-const columnsFromBackend =
-    {
-        [uuidv4()]: {
-            name: 'Requested',
-            items: itemsFromBackend
-        },
-        [uuidv4()]: {
-            name: 'To Do',
-            items: []
-        },
-        [uuidv4()]: {
-            name: 'In Progress',
-            items: []
-        },
-        [uuidv4()]: {
-            name: 'Completed',
-            items: []
-        }
-    }
-
-
 function Kanban() {
+    const itemsFromBackend = [
+        { id: uuidv4(), content: "first task"},
+        { id: uuidv4(), content: "second task"},
+    ]
+
+    const columnsFromBackend =
+        {
+            [uuidv4()]: {
+                name: 'Requested',
+                items: itemsFromBackend
+            },
+            [uuidv4()]: {
+                name: 'To Do',
+                items: []
+            },
+            [uuidv4()]: {
+                name: 'In Progress',
+                items: []
+            },
+            [uuidv4()]: {
+                name: 'Completed',
+                items: []
+            }
+        }
+
     const [ columns, setColumns ] = useState(columnsFromBackend);
 
     const onDragEnd = (result, columns, setColumns) => {
