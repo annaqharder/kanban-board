@@ -12,19 +12,19 @@ function Kanban() {
     const columnsFromBackend =
         {
             [uuidv4()]: {
-                name: 'Requested',
+                name: 'BACKLOG',
                 items: itemsFromBackend
             },
             [uuidv4()]: {
-                name: 'To Do',
+                name: 'TO DO',
                 items: []
             },
             [uuidv4()]: {
-                name: 'In Progress',
+                name: 'IN PROGRESS',
                 items: []
             },
             [uuidv4()]: {
-                name: 'Completed',
+                name: 'COMPLETED',
                 items: []
             }
         }
