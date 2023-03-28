@@ -84,8 +84,8 @@ function Kanban() {
                                                 style={{
                                                     background: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
                                                     padding: 4,
-                                                    width: 250,
-                                                    minHeight:500
+                                                    width: 300,
+                                                    minHeight: 900
                                                 }}
                                             >
                                                 {column.items.map((item, index) => {
