@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Kanban() {
     const itemsFromBackend = [
-        { id: uuidv4(), content: "first task"},
-        { id: uuidv4(), content: "second task"},
+        { id: uuidv4(), content: "Finish BreakLine Assignment", priority: "HIGH"},
+        { id: uuidv4(), content: "Apply to 10 Jobs", priority: "LOW"},
     ]
 
     const columnsFromBackend =
@@ -25,6 +25,10 @@ function Kanban() {
             },
             [uuidv4()]: {
                 name: 'COMPLETED',
+                items: []
+            },
+            [uuidv4()]: {
+                name: 'NEEDS REVIEW',
                 items: []
             }
         }
@@ -84,7 +88,7 @@ function Kanban() {
                                                 style={{
                                                     background: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey',
                                                     padding: 4,
-                                                    width: 300,
+                                                    width: 250,
                                                     minHeight: 900
                                                 }}
                                             >
@@ -107,7 +111,12 @@ function Kanban() {
                                                                             ...provided.draggableProps.style
                                                                         }}
                                                                     >
-                                                                        {item.content}
+                                                                        <div>
+                                                                            {item.content}
+                                                                        </div>
+                                                                        <div>
+                                                                            Priority: {item.priority}
+                                                                        </div>
                                                                     </div>
                                                                 )
                                                             }}
